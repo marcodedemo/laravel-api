@@ -179,7 +179,7 @@ class ProjectController extends Controller
             'title' => 'required|unique:projects,title,'. $projectId,
             'description' => 'required',
             'link' => 'required',
-            'execution_date' => 'required',
+            'execution_date' => 'required|date|date_format:Y-m-d',
             'type_id' => 'nullable|exists:types,id',
             'cover_image' => 'nullable|image|max:8192',
 
@@ -188,6 +188,8 @@ class ProjectController extends Controller
             'title.unique' => 'Title already taken, please insert an alternative value',
             'description.required' => 'Insert a description',
             'execution_date.required' => 'Insert an execution date',
+            'execution_date.date' => 'Invalid date format',
+            'execution_date.date_format' => 'The date must be in the format YYYY-MM-DD',
             'type_id.exists' => 'Insert an existing category value',
             'cover_image.max' => "The uploaded image weighs too much",
             'cover_image.image' => "The file must be of type image",
