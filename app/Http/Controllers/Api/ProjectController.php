@@ -21,14 +21,14 @@ class ProjectController extends Controller
             $projects = Project::where('type_id', $requestData['type_id'])
                 ->with('technologies', 'type')
                 ->orderBy('projects.created_at', 'desc')
-                ->get();
+                ->paginate(8);
 
                 if(count($projects) == 0){
 
                     return response()->json([
 
                         'success' => false,
-                        'error' => 'Non ci sono progetti appartenenti a questo type',
+                        'error' => 'Non ci sono progetti appartenenti a questa categoria',
                     ]);
                 }
         }else{

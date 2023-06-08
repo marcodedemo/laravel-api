@@ -79,6 +79,10 @@
                                     @if (str_contains(strtolower($project->technologies), "laravel"))
                                     <div class="logo"><img src="{{Vite::asset('resources/img/logos/laravel.png')}}" alt="Laravel logo"></div>
                                     @endif
+
+                                    @if (str_contains(strtolower($project->technologies), "sass"))
+                                    <div class="logo"><img src="{{Vite::asset('resources/img/logos/sass.png')}}" alt="sass logo"></div>
+                                    @endif
                                 </div>
                             
                             </li>
