@@ -21,7 +21,7 @@ class ProjectController extends Controller
             $projects = Project::where('type_id', $requestData['type_id'])
                 ->with('technologies', 'type')
                 ->orderBy('projects.created_at', 'desc')
-                ->paginate(8);
+                ->paginate(9);
 
                 if(count($projects) == 0){
 
@@ -35,7 +35,7 @@ class ProjectController extends Controller
 
             $projects = Project::with('technologies', 'type')
             ->orderBy('projects.created_at', 'desc')
-            ->paginate(8);
+            ->paginate(9);
     
         }
     
